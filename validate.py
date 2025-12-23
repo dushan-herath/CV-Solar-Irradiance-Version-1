@@ -83,7 +83,7 @@ if __name__ == "__main__":
     TS_SEQ_LEN = 30
     MAX_HORIZON = 25
     TARGET_DIM = 1
-    BATCH_SIZE = 8
+    BATCH_SIZE = 32
 
     print(f"Exporting predictions and metrics on {DEVICE}")
 
