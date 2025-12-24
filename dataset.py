@@ -161,7 +161,7 @@ if __name__ == "__main__":
     )
 
     # Retrieve a single sample from the dataset
-    sky_seq, ts_seq, target_seq, ts_time, tgt_time = dataset[1000]
+    sky_seq, ts_seq, target_seq, ts_time, tgt_time = dataset[2440]
 
     # Convert timestamp strings back to datetime objects
     ts_time = pd.to_datetime(ts_time)

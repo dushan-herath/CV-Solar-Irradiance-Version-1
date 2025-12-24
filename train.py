@@ -167,9 +167,9 @@ if __name__ == "__main__":
 
     # Initialize the multimodal forecasting model
     sky_encoder = ImageEncoder(
-        model_name="convnextv2_tiny.fcmae_ft_in1k",
+        model_name="swin_tiny_patch4_window7_224",
         pretrained=True,
-        freeze=False,
+        freeze=True,
     )
 
     model = MultimodalForecaster(

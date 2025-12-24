@@ -123,7 +123,7 @@ def main(file_path="forecast_results.npz"):
     plot_error_vs_horizon(mae, "MAE", target_names)
     plot_error_vs_horizon(rmse, "RMSE", target_names)
 
-    horizons_to_plot = [1, 5, 10, 25]
+    horizons_to_plot = [1, 5, 10]
     print("\nGenerating predicted vs actual plots")
     for h in horizons_to_plot:
         plot_predictions_vs_time(
