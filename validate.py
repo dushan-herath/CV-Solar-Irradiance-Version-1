@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
     # Build model using the same architecture as training
     sky_encoder = ImageEncoder(
-        model_name="resnet18",
+        model_name="convnextv2_tiny.fcmae_ft_in1k",
         pretrained=True,
         freeze=True,
     )
