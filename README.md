@@ -183,6 +183,9 @@ python dataset.py
 - Plots historical time-series inputs and forecast targets, un-normalized to physical units.  
 - Marks the boundary between history and forecast for clarity.
 
+<img src="images/sky_seq.png" alt="Sky Sequence" width="1000"/>
+<img src="images/time_seq.png" alt="Time Sequence" width="1000"/>
+
 ---
 
 ## Customizable options
