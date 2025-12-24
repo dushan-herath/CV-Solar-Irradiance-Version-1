@@ -197,7 +197,9 @@ class MultimodalForecaster(nn.Module):
         fused = self.pos_enc(fused)
         fused = self.temporal_tf(fused)
 
-        context = fused[:, -1]
+        #context = fused[:, -1]
+        context = fused.mean(dim=1)
+
         out = self.head(context)
 
         return out.view(B, self.horizon, self.target_dim)
