@@ -169,7 +169,7 @@ if __name__ == "__main__":
     sky_encoder = ImageEncoder(
         model_name="convnextv2_tiny.fcmae_ft_in1k",
         pretrained=True,
-        freeze=False,
+        freeze=True,
     )
 
     model = MultimodalForecaster(
