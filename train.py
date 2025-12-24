@@ -111,7 +111,7 @@ if __name__ == "__main__":
     mp.freeze_support()
 
     CSV_PATH = "dataset_full_1M.csv"
-    BATCH_SIZE = 32
+    BATCH_SIZE = 2
     NUM_EPOCHS = 25
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     IMG_SEQ_LEN = 5
@@ -167,7 +167,7 @@ if __name__ == "__main__":
 
     # Initialize the multimodal forecasting model
     sky_encoder = ImageEncoder(
-        model_name="resnet18",
+        model_name="convnextv2_tiny.fcmae_ft_in1k",
         pretrained=True,
         freeze=False,
     )
