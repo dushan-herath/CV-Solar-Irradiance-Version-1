@@ -12,7 +12,7 @@ class IrradianceForecastDataset(Dataset):
         self,
         csv_path: str,
         split: str = "train",
-        val_ratio: float = 0.25,
+        val_ratio: float = 0.2,
         img_seq_len: int = 5,
         ts_seq_len: int = 30,
         horizon: int = 25,
