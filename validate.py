@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
     # Build model using the same architecture as training
     sky_encoder = ImageEncoder(
-        model_name="swin_tiny_patch4_window7_224",
+        model_name="regnety_400mf",
         pretrained=True,
         freeze=True,
     )
