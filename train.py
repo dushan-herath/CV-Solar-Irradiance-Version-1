@@ -169,7 +169,7 @@ if __name__ == "__main__":
     sky_encoder = ImageEncoder(
         model_name="swin_tiny_patch4_window7_224",
         pretrained=True,
-        freeze=True,
+        freeze=False,
     )
 
     model = MultimodalForecaster(
