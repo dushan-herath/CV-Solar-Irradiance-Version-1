@@ -73,14 +73,37 @@ class IrradianceForecastDataset(Dataset):
         self.df[self.feature_cols] = (self.df[self.feature_cols] - mean) / std
 
         # Image preprocessing pipeline for sky images
-        self.img_transform = transforms.Compose([
-            transforms.Resize((img_size, img_size)),
-            transforms.ToTensor(),
-            transforms.Normalize(
-                mean=[0.485, 0.456, 0.406],
-                std=[0.229, 0.224, 0.225]
-            ),
-        ])
+        if split == "train":
+            self.img_transform = transforms.Compose([
+                transforms.RandomResizedCrop(
+                    (img_size, img_size),
+                    scale=(0.85, 1.0),
+                    ratio=(0.95, 1.05),
+                ),
+                transforms.ColorJitter(
+                    brightness=0.25,
+                    contrast=0.25,
+                    saturation=0.1,
+                ),
+                transforms.RandomRotation(3),
+                transforms.GaussianBlur(kernel_size=3, sigma=(0.1, 1.2)),
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.485, 0.456, 0.406],
+                    std=[0.229, 0.224, 0.225],
+                ),
+            ])
+        else:
+            # Validation / inference — no stochastic augments
+            self.img_transform = transforms.Compose([
+                transforms.Resize((img_size, img_size)),
+                transforms.ToTensor(),
+                transforms.Normalize(
+                    mean=[0.485, 0.456, 0.406],
+                    std=[0.229, 0.224, 0.225],
+                ),
+            ])
+
 
         # Log dataset configuration
         print(f"\nDataset initialized ({split.upper()}): {len(self)} samples")
