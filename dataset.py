@@ -75,11 +75,6 @@ class IrradianceForecastDataset(Dataset):
         # Image preprocessing pipeline for sky images
         if split == "train":
             self.img_transform = transforms.Compose([
-                transforms.RandomResizedCrop(
-                    (img_size, img_size),
-                    scale=(0.85, 1.0),
-                    ratio=(0.95, 1.05),
-                ),
                 transforms.ColorJitter(
                     brightness=0.25,
                     contrast=0.25,
