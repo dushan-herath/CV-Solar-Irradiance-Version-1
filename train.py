@@ -114,8 +114,8 @@ if __name__ == "__main__":
     BATCH_SIZE = 32
     NUM_EPOCHS = 25
     DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    IMG_SEQ_LEN = 2
-    TS_SEQ_LEN = 2
+    IMG_SEQ_LEN = 5
+    TS_SEQ_LEN = 30
     HORIZON = 15
     TARGET_DIM = 1
 
@@ -167,7 +167,7 @@ if __name__ == "__main__":
 
     # Initialize the multimodal forecasting model
     sky_encoder = ImageEncoder(
-        model_name="resnet18", # swin_tiny_patch4_window7_224, convnextv2_tiny.fcmae_ft_in1k ,efficientnet_b0, regnety_004, convnextv2_tiny, efficientnet_b2
+        model_name="efficientnet_b0", # swin_tiny_patch4_window7_224, convnextv2_tiny.fcmae_ft_in1k ,efficientnet_b0, regnety_004, convnextv2_tiny, efficientnet_b2
         pretrained=True,
         freeze=False,
     )

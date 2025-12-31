@@ -79,8 +79,8 @@ if __name__ == "__main__":
 
     # Dataset and evaluation settings (should match training)
     CSV_PATH = "dataset_full_1M.csv"
-    IMG_SEQ_LEN = 2
-    TS_SEQ_LEN = 2
+    IMG_SEQ_LEN = 5
+    TS_SEQ_LEN = 30
     MAX_HORIZON = 15
     TARGET_DIM = 1
     BATCH_SIZE = 32
@@ -130,7 +130,7 @@ if __name__ == "__main__":
 
     # Build model using the same architecture as training
     sky_encoder = ImageEncoder(
-        model_name="resnet18",
+        model_name="efficientnet_b0",
         pretrained=True,
         freeze=True,
     )
