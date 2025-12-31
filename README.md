@@ -28,6 +28,8 @@ Follow the steps below to train the model, evaluate it, and generate visualizati
 
 The training script prepares the datasets, trains the multimodal forecasting model, and saves checkpoints and the best model.
 
+First clone the repo, download the dataset from https://drive.google.com/file/d/18LE0IBg_JPpNqhjQzm7OmQFh1gbkwxxC/view?usp=sharing , extract it to the same location
+
 ```bash
 python train.py
 ```
@@ -144,6 +146,21 @@ python generate_plots_from_npz.py
 
 - You can select which horizons to plot by modifying the `horizons_to_plot` variable inside the script.  
 - The number of samples plotted can also be adjusted.
+
+#### RMSE vs Forecast Horizon
+<img src="images/rmse_vs_horizon.png" width="1000"/>
+
+#### MAE vs Forecast Horizon
+<img src="images/mae_vs_horizon.png" width="1000"/>
+
+#### Prediction vs Actual - Horizon = 1
+<img src="images/pred_vs_actual_ghi_h1.png" width="1000"/>
+
+#### Prediction vs Actual - Horizon = 5
+<img src="images/pred_vs_actual_ghi_h5.png" width="1000"/>
+
+#### Prediction vs Actual - Horizon = 10
+<img src="images/pred_vs_actual_ghi_h10.png" width="1000"/>
 
 
 ## 4. Dataset and Sample Visualization
